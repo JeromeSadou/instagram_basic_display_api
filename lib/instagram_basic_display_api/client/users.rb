@@ -12,7 +12,7 @@ module InstagramBasicDisplayAPI
       def user_recent_media(*args)
         options = args.last.is_a?(Hash) ? args.pop : {}
         id = args.first || 'me'
-        fields = options[:fields] || 'id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username'
+        fields = options[:fields] || 'id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username,children'
         limit = options[:limit] || ''
         after = options[:after] || ''
         url = "#{id}/media?fields=#{fields}&access_token=#{access_token}&limit=#{limit}&after=#{after}"
